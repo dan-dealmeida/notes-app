@@ -1,0 +1,5 @@
+# .gitattributes
+# Set the desired line ending handling for specific files or patterns
+# In this example, we're setting the line endings for all files in the 'node_modules' directory to be auto-detected.
+
+/node_modules/* text=auto
