@@ -58,6 +58,26 @@ node notes.js read --title <title>
 
 where `<title>` is the title of the note to read.
 
+
+### Edit Command
+
+To edit a note, run the following command:
+
+```
+node notes.js edit --title <title>
+```
+
+where `<title>` is the title of the note to edit.
+
+## Example
+
+The following example shows how to use the notes app to edit a note:
+
+```
+# Edit a note
+node notes.js edit --title "My first note"
+
+
 ## Example
 
 The following example shows how to use the notes app to add a new note, list all notes, and read a note:
