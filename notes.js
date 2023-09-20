@@ -1,5 +1,6 @@
 const fs = require("fs")
 const chalk = require ('chalk')
+const prompt = require('prompt-sync')();
 
 
 const addNote = (title, body = "") => {
@@ -31,6 +32,26 @@ const readNote = (title) => {
         console.log(chalk.red("no note named "+title))
     }
 }
+
+const editNote = (title) => {
+    const notes = loadNotes();
+    const note = notes.find((note) => note.title === title);
+  
+    if (note) {
+      // Prompt the user to enter the new contents of the note.
+      const newBody = prompt('Enter the new contents of the note: ');
+  
+      // Update the note with the new contents.
+      note.body = newBody;
+  
+      // Save the updated note to the JSON file.
+      saveNotes(notes);
+  
+      console.log(chalk.green.inverse('Note edited!'));
+    } else {
+      console.log(chalk.red.inverse('No note found with that title!'));
+    }
+  };
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
@@ -77,5 +98,6 @@ module.exports = {
     addNote: addNote,
     removeNote: removeNote,
     listNotes: listNotes,
-    readNote: readNote
+    readNote: readNote,
+    editNote: editNote
 }

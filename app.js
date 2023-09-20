@@ -62,4 +62,18 @@ yargs.command({
 
 })
 
+//create edit command
+yargs.command({
+    command: 'edit',
+    describe: 'edits a note',
+    builder: {
+        title: {
+            describe: 'note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => notes.editNote(argv.title)
+})
+
 yargs.parse()
