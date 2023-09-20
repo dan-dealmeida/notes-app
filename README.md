@@ -73,6 +73,3 @@ node notes.js list
 node notes.js read --title "My first note"
 ```
 
-## License
-
-This notes app is licensed under the MIT License.
